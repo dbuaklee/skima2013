@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xmlns:repository="http://www.springframework.org/schema/data/repository"
+	xsi:schemaLocation="http://www.springframework.org/schema/data/repository http://www.springframework.org/schema/data/repository/spring-repository-1.0.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<context:component-scan base-package="th.or.innova" />
+	<context:annotation-config/>
+	
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+		
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="${datasource.jdbc.driver}"/>
+		<property name="url" value="${datasource.jdbc.url}"/>
+		<property name="username" value="${datasource.jdbc.username}"/>
+		<property name="password" value="${datasource.jdbc.password}"/>
+	</bean>
+	
+	<!-- <context:property-placeholder location="jdbc.properties"/> -->
+	
+	<bean id="registrationDao" class="th.or.innova.skima2013.dao.RegistrationJdbcDao">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+	
+		<bean id="myEmf" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+  		<property name="dataSource" ref="dataSource"/>
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+                <property name="database" value="H2" />
+<!-- 				<property name="showSql" value="true"/> -->
+				<property name="generateDdl" value="false"/>
+
+				<property name="databasePlatform" value="${hibernate.dialect}" />
+			</bean>
+        </property>
+        <property name="packagesToScan">
+        	<list>
+            	<value>th.or.innova.skima2013.model</value>
+        	</list>
+        </property>
+ 	</bean>
+ 	
+ 	
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="myEmf" />
+	</bean>
+
+	<bean id="datbaseSchemaExport" class="th.or.innova.skima2013.repository.DatabaseSchemaExport"/>
+
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+      <property name="host" value="${smtp.server.ip}"/>
+      <property name="port" value="${smtp.server.port}"></property>
+   </bean>
+
+   <bean id="velocityEngine" class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
+      <property name="velocityProperties">
+         <value>
+          resource.loader=class
+          class.resource.loader.class=org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+          velocimacro.library.autoreload=true
+         </value>
+      </property>
+   </bean>
+
+	
+	<bean id="registrationService" class="th.or.innova.skima2013.service.RegistrationServiceImpl"/>
+	
+	<jpa:repositories base-package="th.or.innova.skima2013.repository"/>
+	
+	
+	
+</beans>

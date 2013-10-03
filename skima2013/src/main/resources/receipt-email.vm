@@ -1,0 +1,32 @@
+<html>
+<body>
+<h3>Dear ${p.title} ${p.firstName} ${p.lastName},</h3>
+
+<div>
+<p>Thank you for registering for SKIMA 2012 conference. Please see the attached receipt of your 
+registration payment The following are summaries on what you have registered:</p>
+
+<ul>
+<li><b>Invoice Number: </b> ${p.registrationInfo.refCode}</li>
+<li><b>Registration Information : </b> ${p.registrationInfo.registrationItemWebString}</li>
+
+#if ( $p.registrationInfo.workshopItem != "notSelected" )
+<li><b>ISO/IEC 29110 Workshop Information : </b> ${p.registrationInfo.workshopItemWebString}</li>
+#end
+
+#if ($p.registrationInfo.numExtraCD > 0)
+<li><b>Extra CD Order: </b> ${p.registrationInfo.numExtraCD}</li>
+#end
+#if ($p.registrationInfo.numExtraBanquet > 0)
+<li><b>Extra Banquet Order: </b> ${p.registrationInfo.numExtraBanquet}</li>
+</ul>
+#end
+ 
+<p> We are looking forward to see you at the Conference. </p>
+
+<p>Regard <br/> SKIMA 2012 Conference Registration Chairs</p>
+
+</div>
+</body>
+
+</html>

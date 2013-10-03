@@ -1,0 +1,77 @@
+@CHARSET "UTF-8";
+
+#registrationRateTable th {
+	background-color: #66FFFF;
+}
+
+#registrationRateTable th, #registrationRateTable td:not(:first-child) {
+	text-align: center;
+}
+
+.table tbody th {
+	background-color: #F5F5F5;
+}
+
+td.paidCss {
+	background-color: #DBFFD1;
+}
+
+.table tbody tr:hover td.paidCss {
+	background-color: #E1FCCE;
+}
+
+.unpaidCss {
+	background-color: #FFFFFF;
+}
+
+
+#wrapper {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    width: 1060px;
+}
+
+#host {
+    color: #737062;
+    display: block;
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+    height: 130px;
+    margin-bottom: 20px;
+    padding: 15px;
+    position: relative;
+    width: 420px;
+    word-spacing: 5px;
+    font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
+}
+
+#sponsor {
+    color: #737062;
+    display: block;
+    float: right;
+    font-size: 14px;
+    font-weight: bold;
+    height: 130px;
+    margin-bottom: 20px;
+    padding: 15px;
+    position: relative;
+    width: 420px;
+    word-spacing: 5px;
+    font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
+}
+
+#footer {
+    color: #9C988A;
+    float: left;
+    font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    margin: 0 auto;
+    padding: 3px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 994px;
+}

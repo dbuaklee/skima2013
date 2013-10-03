@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Receipt" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryWithPageHeaderAndFooter="true" isFloatColumnFooter="true" uuid="ce5c9832-6d3e-40ba-80a6-983a94d1396e">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="PERSON" class="th.or.innova.skima2013.model.Person" isForPrompting="false"/>
+	<parameter name="SHOW_SIGNATURE" class="java.lang.Boolean" isForPrompting="false"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="no" class="java.lang.Integer"/>
+	<field name="line" class="java.lang.String"/>
+	<field name="totalAmount" class="java.lang.String"/>
+	<field name="amount" class="java.lang.String"/>
+	<field name="quantity" class="java.lang.Integer"/>
+	<field name="checkBox" class="java.lang.Boolean"/>
+	<field name="checkMark" class="java.lang.Boolean"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="249" splitType="Stretch">
+			<image>
+				<reportElement uuid="42c21a9c-934c-41a2-b7df-8b01d9431501" x="9" y="8" width="50" height="50"/>
+				<imageExpression><![CDATA["graphics/innova.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="6955b13d-3d2f-423a-a08a-1d39f4748570" x="70" y="11" width="168" height="20"/>
+				<textElement>
+					<font fontName="SansSerif" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[The Innova Foundation]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3414cea1-0796-4e09-b700-3686be9f603c" x="70" y="31" width="481" height="39"/>
+				<textElement/>
+				<text><![CDATA[128/97  Payathai Plaza 8th  floor Suite N  Phayatai Rd., Tung-payathai, Rajtavee, Bangkok 10400  Thailand 
+Tel.(662) 216-5769  Fax. (662)216-5769  e-mail: info@innova.or.th
+Thailand Tax Payer ID:   099 30000 87992]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f6c78fcf-bdcc-4a56-8347-1c2341617fcf" x="172" y="96" width="210" height="34"/>
+				<textElement textAlignment="Center" markup="none">
+					<font fontName="SansSerif" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ORIGINAL RECEIPT]]></text>
+			</staticText>
+			<textField pattern="">
+				<reportElement uuid="18d90190-0da1-46d6-9cd6-59b5b454257d" x="30" y="153" width="328" height="14"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{PERSON}.getFullName()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b5886515-1152-4a41-93a3-41e4a580f6be" x="30" y="173" width="454" height="76"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{PERSON}.getBillingAddressString()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="973df7d0-8281-45b9-a7a9-ae4f88e79d9c" x="380" y="123" width="150" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["Receipt Date: " + $P{PERSON}.getRegistrationInfo().getFormatReceiptDate()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ec058c70-752c-49ce-96f9-f3ac226e6749" x="380" y="138" width="150" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["Receipt No. " + $P{PERSON}.getRegistrationInfo().getReceiptNo()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="88f575ee-3b91-4dd2-9b45-6d78568b7b8d" x="5" y="153" width="25" height="14"/>
+				<textElement/>
+				<text><![CDATA[Attn:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="24e94580-4bd3-41fc-b4dd-26c01a5c9c7c" x="380" y="153" width="150" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["Refer to Invoice No. "+$P{PERSON}.getRegistrationInfo().getRefCode()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="3dc3c431-94ec-4f8a-a5c7-7cab34ed3122" x="0" y="0" width="30" height="24"/>
+				<box>
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c998bda3-4f9e-444a-8142-8283561ee4d9" x="30" y="0" width="352" height="24"/>
+				<box>
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[ITEM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="46e38ad5-a68f-4316-954e-cba0bfcd6642" x="490" y="0" width="64" height="24"/>
+				<box>
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Amount (USD)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c5b97041-d2e3-48ad-8c28-514642a3a151" x="30" y="24" width="352" height="18"/>
+				<box leftPadding="15">
+					<pen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[SKIMA 2013 Conference, 18-20 December 2013, Chiang Mai, Thailand]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="cfb6987e-65ba-4e06-a02b-ef7a848c8ba2" x="490" y="24" width="64" height="18"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="bba64250-b82b-45eb-b05e-8746a710b690" x="0" y="24" width="30" height="18"/>
+				<box>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1e92d41e-6e02-466f-ba94-dc1d7953703e" x="382" y="0" width="60" height="24"/>
+				<box>
+					<topPen lineWidth="0.5" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[QUANTITY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="52c04f8d-b15a-415c-8f91-012fbaf0a2ca" x="442" y="0" width="48" height="24"/>
+				<box>
+					<topPen lineWidth="0.5" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[@]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="160f0388-d53c-4829-8fdc-3b016ec72622" x="382" y="24" width="60" height="18"/>
+				<box>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ac0e41d7-ea09-42e8-a274-bd4c41e0f681" x="442" y="24" width="48" height="18"/>
+				<textElement/>
+				<text><![CDATA[]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<image>
+				<reportElement uuid="743331b6-80b5-4873-84fb-cefb3ebb08b0" x="45" y="1" width="15" height="14">
+					<printWhenExpression><![CDATA[$F{checkMark}]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA["graphics/checkmark.png"]]></imageExpression>
+			</image>
+			<rectangle>
+				<reportElement uuid="f5f8d420-18b5-44c3-b9af-2ce321f800fd" x="45" y="5" width="10" height="10">
+					<printWhenExpression><![CDATA[$F{checkBox}]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="e32ac330-56ba-42f6-976e-07fb2123d504" x="0" y="0" width="30" height="20"/>
+				<box>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{no}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement uuid="ff8b399b-1323-45be-bdac-b643747c689f" x="30" y="0" width="352" height="20"/>
+				<box leftPadding="15">
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{line}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement uuid="84af1688-f409-4eaa-ab8e-c58ea2939162" x="490" y="0" width="64" height="20"/>
+				<box rightPadding="10">
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{totalAmount}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement uuid="b95deb96-8329-4553-bb70-90e3cf589380" x="382" y="0" width="60" height="20"/>
+				<box>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{quantity}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement uuid="c431f237-1328-417f-abae-18de87229545" x="442" y="0" width="48" height="20"/>
+				<box rightPadding="10">
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement uuid="743331b6-80b5-4873-84fb-cefb3ebb08b0" x="45" y="1" width="15" height="14">
+					<printWhenExpression><![CDATA[$F{checkMark}]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA["graphics/checkmark.png"]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="227" splitType="Stretch">
+			<textField pattern="">
+				<reportElement uuid="da40b94d-567e-4139-ad4a-f6d542fe84f0" x="0" y="24" width="490" height="36"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["TOTAL AMOUNT PAID = "+$P{PERSON}.getRegistrationInfo().getTotalFeeText()+" US Dollar"]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement uuid="405572d4-dda1-4553-99cb-9a6018fd0f26" x="490" y="24" width="64" height="36"/>
+				<box rightPadding="10">
+					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{PERSON}.getRegistrationInfo().getTotalFeeFormat()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="e4bc4fab-5abc-4b8a-84e3-4b78ff608b3b" x="0" y="0" width="490" height="24"/>
+				<box rightPadding="20">
+					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<text><![CDATA[NO VAT (0%)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8ad39e48-a6fe-4f1d-a93e-3d6961decc5d" x="490" y="0" width="64" height="24"/>
+				<box rightPadding="10">
+					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<text><![CDATA[0.00]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement uuid="35ad0bbc-742f-4ba0-a349-ac96e466e584" x="104" y="116" width="10" height="10"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="56477c8d-7085-44ba-9ff0-7ed3c300c609" x="123" y="114" width="90" height="20"/>
+				<textElement/>
+				<text><![CDATA[Money Transfer]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement uuid="35ad0bbc-742f-4ba0-a349-ac96e466e584" x="226" y="116" width="10" height="10"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="56477c8d-7085-44ba-9ff0-7ed3c300c609" x="245" y="114" width="90" height="20"/>
+				<textElement/>
+				<text><![CDATA[Credit Card]]></text>
+			</staticText>
+			<image evaluationTime="Auto">
+				<reportElement uuid="7ef9c048-a676-4cbb-8349-1a98bac6a5e3" x="105" y="112" width="15" height="14" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$P{PERSON}.getRegistrationInfo().isPayByMoneyTransfer()]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA["graphics/checkmark.png"]]></imageExpression>
+			</image>
+			<image evaluationTime="Auto">
+				<reportElement uuid="7ef9c048-a676-4cbb-8349-1a98bac6a5e3" key="" x="227" y="112" width="15" height="14">
+					<printWhenExpression><![CDATA[$P{PERSON}.getRegistrationInfo().isPayByCreditCard()]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA["graphics/checkmark.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="2ef41b36-1166-4bd8-98a7-ef40dca6d402" x="45" y="114" width="46" height="20"/>
+				<textElement/>
+				<text><![CDATA[Paid By :]]></text>
+			</staticText>
+			<textField pattern="">
+				<reportElement uuid="da40b94d-567e-4139-ad4a-f6d542fe84f0" x="0" y="60" width="554" height="36"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["("+$P{PERSON}.getRegistrationInfo().getTotalThaiFeeText()+" Thai Baht) - " +$P{PERSON}.getRegistrationInfo().getTotalThaiFeeFormat() + " THB"]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement uuid="75696f58-51dd-4e38-b486-f2cbc1049337" x="398" y="128" width="91" height="97">
+					<printWhenExpression><![CDATA[$P{SHOW_SIGNATURE}]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA["graphics/Signature.jpg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement uuid="df400ff6-7f11-4f2c-ae9c-112309bd17ed" x="450" y="116" width="87" height="93">
+					<printWhenExpression><![CDATA[$P{SHOW_SIGNATURE}]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA["graphics/tt.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="6e827aa2-45e5-42b0-80be-98209a23be0d" x="373" y="174" width="155" height="20"/>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Dashed" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Director and Treasurer]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>

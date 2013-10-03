@@ -1,0 +1,43 @@
+<html>
+<body>
+<h3>Dear ${p.title} ${p.firstName} ${p.lastName},</h3>
+
+<div>
+<p>Thank you for registering for SKIMA 2012 conference. The following are summaries on what
+you have registered:</p>
+
+<ul>
+<li><b>Invoice Number: </b> ${p.registrationInfo.refCode}</li>
+<li><b>Registration Information : </b> ${p.registrationInfo.registrationItemWebString}</li>
+
+#if ( $p.registrationInfo.workshopItem != "notSelected" )
+<li><b>ISO/IEC 29110 Workshop Information : </b> ${p.registrationInfo.workshopItemWebString}</li>
+#end
+
+<li><b>Extra CD Order: </b> ${p.registrationInfo.numExtraCD}</li>
+<li><b>Extra Banquet Order: </b> ${p.registrationInfo.numExtraBanquet}</li>
+</ul>
+
+<p> You have chosen to pay registration fee by : ${p.registrationInfo.paymentMethod.shortWebString} 
+#if ( $p.registrationInfo.creditCardPaymentStatus == "FAIL" )
+	has been failed. Please log in at the address below and
+	enter your email address and Invoice number above to make a new payment.
+#end
+
+#if ( $p.registrationInfo.creditCardPaymentStatus == "CANCEL" )
+	has been canceled. Please log in at the address below and
+	enter your email address and Invoice number above to make a new payment.
+#end
+
+<p> You can check back on your registration fee processing status at 
+<a href="http://www.innova.or.th/skima2012/registerInfo">http://www.innova.or.th/skima2012/registerInfo</a>
+and enter you email address and Invoice Number above.
+ 
+<p> We are looking forward to see you at the Conference. </p>
+
+<p>Regard <br/> SKIMA 2012 Conference Registration Chairs</p>
+
+</div>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow
+                          http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
+      start-state="info">
+
+	<var name="registrator" class="th.or.innova.skima2013.model.Person"/>
+	
+	<on-start>
+        <evaluate expression="registrationService.getNewPerson()" 
+                  result="flowScope.registrator"  />
+    </on-start>
+
+	
+    <view-state id="info" view="registration-0">
+        <transition on="next" to="enterRegistration"/>
+        <transition on="alreadyRegister" to="alreadyRegister"/>
+        <transition on="cancel" to="registrationCancelled" validate="false"/>
+    </view-state>
+	
+    <view-state id="enterRegistration" view="registration-1" model="registrator" >
+        <transition on="next" to="registrationItemSelecting" />
+        <transition on="cancel" to="registrationCancelled" validate="false"/>
+    </view-state>
+	
+    <view-state id="registrationItemSelecting" view="registration-2" model="registrator">
+    	<var name="countryList" class="th.or.innova.skima2013.view.CountryList"/>
+       	<transition on="back" to="enterRegistration" validate="false"/>
+       	<transition on="cancel" to="registrationCancelled" validate="false"/>
+        <transition on="confirm" to="registrationConfirmed"/>
+    </view-state>
+    
+    <view-state id="registrationConfirmed" view="registration-3" model="registrator">
+    	<transition on="creditCard" to="creditCardInfo">
+    			<evaluate expression="registrationService.registerPerson(registrator)"></evaluate>
+    	</transition>
+    	<transition on="moneyTransfer" to="moneyTransferInfo">
+    			<evaluate expression="registrationService.registerPerson(registrator)"></evaluate>
+    	</transition>
+    	<transition on="edit" to="registrationItemSelecting" validate="false"/>
+    </view-state>
+	
+	<view-state id="moneyTransferInfo" view="moneyTransferInfo">
+		<transition on="edit" to="registrationConfirmed"/>
+		<transition on="complete" to="registrationEnd">
+			<evaluate expression="registrationService.sendRegistrationMail(registrator)"></evaluate>
+		</transition>
+	</view-state>
+	
+	<view-state id="creditCardInfo" view="creditCardInfo">
+		<transition on="edit" to="registrationConfirmed"/>
+		<transition on="complete" to="creditCardEnd"/>
+		<transition on="exit" to="registrationEnd"/>
+	</view-state>
+	
+	<end-state id="creditCardEnd" view="creditCardEnd"/>
+	
+	<end-state id="alreadyRegister" view="redirect:registerInfo"/>
+	
+    <end-state id="registrationEnd" view="externalRedirect:http://www.camt.cmu.ac.th/skima2013/"/>
+
+    <end-state id="registrationCancelled" view="externalRedirect:http://www.camt.cmu.ac.th/skima2013/"/>
+
+	
+</flow>
