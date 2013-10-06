@@ -39,13 +39,13 @@ public class RegistrationInfo implements Serializable {
 	private static final SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.US);
 	private static final DecimalFormat nf = new DecimalFormat("#,##0");
 	private static final DecimalFormat nf2decimal = new DecimalFormat("#,##0.00");
-	private static final Date oct15_2013;
+	private static final Date nov15_2013;
 	private static final Date sep1_2012;
 
 	static {
 		// initialize the date
 		try {
-			oct15_2013 = df.parse("2013-10-15 23:00");
+			nov15_2013 = df.parse("2013-11-15 23:00");
 			sep1_2012 = df.parse("2012-09-01 23:00");
 		} catch (ParseException e) {
 			throw new ExceptionInInitializerError(e);
@@ -332,7 +332,7 @@ public class RegistrationInfo implements Serializable {
 			calculatedDate = registerDate;
 		}
 		
-		if(calculatedDate.compareTo(oct15_2013) <= 0)  {
+		if(calculatedDate.compareTo(nov15_2013) <= 0)  {
 				fee += 400;
 			} else {
 				fee += 450;
@@ -349,7 +349,7 @@ public class RegistrationInfo implements Serializable {
 			calculatedDate = registerDate;
 		}
 		
-		if(calculatedDate.compareTo(oct15_2013) <= 0)  {
+		if(calculatedDate.compareTo(nov15_2013) <= 0)  {
 				fee += 6000;
 			} else {
 				fee += 7500;
@@ -366,7 +366,7 @@ public class RegistrationInfo implements Serializable {
 			calculatedDate = registerDate;
 		}
 		
-		if(calculatedDate.compareTo(oct15_2013) <= 0)  {
+		if(calculatedDate.compareTo(nov15_2013) <= 0)  {
 				fee += 280;
 			} else {
 				fee += 330;
@@ -383,10 +383,10 @@ public class RegistrationInfo implements Serializable {
 			calculatedDate = registerDate;
 		}
 		
-		if (calculatedDate.compareTo(oct15_2013) <= 0) {
-			s = "Before 15 October 2013 Advance Rate";
+		if (calculatedDate.compareTo(nov15_2013) <= 0) {
+			s = "Before 15 November 2013 Advance Rate";
 		} else {
-			s = "After 15 October 2013 and On-site rate";
+			s = "After 15 November 2013 and On-site rate";
 		}
 		return s;
 	}

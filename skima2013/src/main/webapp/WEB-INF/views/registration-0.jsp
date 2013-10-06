@@ -33,8 +33,8 @@ wire transfer and submit the scanned payment documents to skima2013@innova.or.th
 <table id="registrationRateTable" class="table table-bordered">
 <tr>
 	<th>Registration Rate</th>
-	<th width="110"><font style="color: red;">Before 15 October 2013 Advance Rate</font></th>
-	<th width="110"><font style="color: red;">After 15 October 2013 On-site rate</font></th>
+	<th width="110"><font style="color: red;">Before 15 November 2013 Advance Rate</font></th>
+	<th width="110"><font style="color: red;">After 15 November 2013 On-site rate</font></th>
 </tr>
 <tr>
 	<td>Full Conference Registration</td>
