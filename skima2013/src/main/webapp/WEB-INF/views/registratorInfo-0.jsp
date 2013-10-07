@@ -25,7 +25,7 @@
 	<c:when test="${registrator.registrationInfo.creditCardPaymentStatus eq 'ACCEPT' }">
 		has been accepted by KTC payment gateway. Usually there is one or two days for processing, and once 
 		your credit has been cleared, you can print your receipt here. Please come back later. If you have 
-		any issue or question about your transaction please contact <a href="mailto:skima2012@innova.or.th">skima2012@innova.or.th</a>
+		any issue or question about your transaction please contact <a href="mailto:skima2013@gmail.com">skima2013@gmail.com</a>
 	</c:when>
 	</c:choose>
 	

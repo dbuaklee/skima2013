@@ -171,7 +171,7 @@ public class RegistrationServiceImpl implements registrationService {
 	         public void prepare(MimeMessage mimeMessage) throws Exception {
 	        	MimeMessageHelper message = new MimeMessageHelper(mimeMessage);
 	        	message.setTo(p.getEmail());
-	            message.setFrom("skima2013@innova.or.th"); // could be parameterized...
+	            message.setFrom("skima2013@gmail.com"); // could be parameterized...
 	            message.setSubject("SKIMA 2013 Regirstration");
 	            Map model = new HashMap();
 	            model.put("p", p);
@@ -190,7 +190,7 @@ public class RegistrationServiceImpl implements registrationService {
 	         public void prepare(MimeMessage mimeMessage) throws Exception {
 	        	MimeMessageHelper message = new MimeMessageHelper(mimeMessage, true);
 	        	message.setTo(p.getEmail());
-	            message.setFrom("skima2013@innova.or.th"); // could be parameterized...
+	            message.setFrom("skima2013@gmail.com"); // could be parameterized...
 	            message.setSubject("SKIMA 2013 Regirstration Receipt");
 	            Map model = new HashMap();
 	            model.put("p", p);

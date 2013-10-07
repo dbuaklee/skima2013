@@ -116,7 +116,7 @@
 		<p> Krungthai Card Public Company Limited (KTC) will be doing the credit card processing 
 		and all of your credit card information will be collected by KTC. You should print this invoice
 		for future reference and if there are any problems or concerns about the payment gateway,
-		please do not hesitate to contact us at <a href="mailto:skima2013@innova.or.th">skima2012@innova.or.th</a> 
+		please do not hesitate to contact us at <a href="mailto:skima2013@gmail.com">skima2013@gmail.com</a> 
 		The invoice shall be paid in Thai baht with the <b>fix rate @ ${registrator.registrationInfo.exchangeRate} baht/dollar </b>with the exact payment
 		amount shown in the invoice above. </p>
 		

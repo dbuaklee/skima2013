@@ -28,7 +28,7 @@ will not be included in the proceedings.</p>
  
 <p>Online registration is available to those paying by credit card and wire transfer.
 If you wish to pay by wire transfer, please complete the online registration, make the 
-wire transfer and submit the scanned payment documents to skima2013@innova.or.th. </p>
+wire transfer and submit the scanned payment documents to skima2013@gmail.com. </p>
 
 <table id="registrationRateTable" class="table table-bordered">
 <tr>
