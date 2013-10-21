@@ -221,7 +221,7 @@
 	<div class="control-group">
 		<label class="control-label">Extra Conference Material CD</label>
 		<div class="controls">
-			<div style="padding-top: 5px;">${registrator.registrationInfo.numExtraCD} (@ 50 USD each = ${registrator.registrationInfo.numExtraCD * 50 } USD)</div>
+			<div style="padding-top: 5px;">${registrator.registrationInfo.numExtraCD} (@ 20 USD each = ${registrator.registrationInfo.numExtraCD * 20 } USD)</div>
 		</div>
 	</div>	
 	

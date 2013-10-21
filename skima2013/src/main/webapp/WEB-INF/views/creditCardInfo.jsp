@@ -68,7 +68,7 @@
 				<td style="text-align: right; padding-right: 30px; border-bottom: 0px; border-top: 0px;"><fmt:formatNumber pattern="#,##0.00">${registrator.registrationInfo.numExtraBanquet *80}</fmt:formatNumber></td>
 			</tr>
 			<tr>
-				<td style="padding-left: 40px; border-bottom: 0px; border-top: 0px;">${registrator.registrationInfo.numExtraCD} Extra Conference Material CD (@ 50 USD each = ${registrator.registrationInfo.numExtraCD *50} USD)</td>
+				<td style="padding-left: 40px; border-bottom: 0px; border-top: 0px;">${registrator.registrationInfo.numExtraCD} Extra Conference Material CD (@ 20 USD each = ${registrator.registrationInfo.numExtraCD *20} USD)</td>
 				<td style="text-align: right; padding-right: 30px; border-bottom: 0px; border-top: 0px;"><fmt:formatNumber pattern="#,##0.00">${registrator.registrationInfo.numExtraCD *50}</fmt:formatNumber></td>
 			
 			</tr>			
