@@ -376,7 +376,7 @@ function toggleBillingAddress() {
 			<h3>Hotel Information</h3>
 		</div>
 		<div class="modal-body">
-			<p>SKIMA 2012 conference partner with Chengdu Unversity to reserve a room at 
+			<p>SKIMA 2013 conference partner with Chengdu Unversity to reserve a room at 
 			<a href="http://www.wangjianghotel.com" target="_blank">WAN JIANG hotel</a> 
 			for participant at the conference rate. The room rate for conference participants
 			is 650Yuan RMB pernight for the one big bed room(single room) and twin beds room(standard room).

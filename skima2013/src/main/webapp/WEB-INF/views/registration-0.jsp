@@ -14,9 +14,9 @@
 	 
 <p>Your registration at this point in time will not entitle you to include any paper, 
 hence, your paper(s), if any, UNLESS already included by another registration, will NOT 
-be included in the Conference Program and Proceedings of SKIMA 2012.</p>
+be included in the Conference Program and Proceedings of SKIMA 2013.</p>
 
-<p>In order to participate in the activities of SKIMA 2012, at least one author of 
+<p>In order to participate in the activities of SKIMA 2013, at least one author of 
 each paper must register for the conference. Registrants may register up to two papers 
 per registration. Each additional paper incurs a fee of 400 or 200 USD per paper according 
 to registration category.</p>

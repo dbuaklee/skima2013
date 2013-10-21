@@ -55,7 +55,7 @@ public class HomeController {
 		
 		databaseSchemaExport.getSchema();
 		
-		model.addAttribute("title", "SKIMA 2012 Registration Admin Page");
+		model.addAttribute("title", "SKIMA 2013 Registration Admin Page");
 		
 		return "admin/createNewDatabaseSchema";
 	}

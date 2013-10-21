@@ -3,7 +3,7 @@
 <h3>Dear ${p.title} ${p.firstName} ${p.lastName},</h3>
 
 <div>
-<p>Thank you for registering for SKIMA 2012 conference. The following are summaries on what
+<p>Thank you for registering for SKIMA 2013 conference. The following are summaries on what
 you have registered:</p>
 
 <ul>
@@ -35,7 +35,7 @@ and enter you email address and Invoice Number above.
  
 <p> We are looking forward to see you at the Conference. </p>
 
-<p>Regard <br/> SKIMA 2012 Conference Registration Chairs</p>
+<p>Regard <br/> SKIMA 2013 Conference Registration Chairs</p>
 
 </div>
 </body>

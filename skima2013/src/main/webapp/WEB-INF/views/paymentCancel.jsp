@@ -9,5 +9,5 @@
    	  You have canceled payment through KTC gateway! Please contact <a href="mailto:skima2013@gmail.com">skima2013@gmail.com</a> 
    	   
       <br/>
-      <a href="http://www.epsrcham.org.uk/SKIMA2012/" class="button">Back to SKIMA 2012 Web Site</a> 
+      <a href="http://www.camt.cmu.ac.th/skima2013/" class="button">Back to SKIMA 2013 Web Site</a> 
 </div>

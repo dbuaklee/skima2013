@@ -5,7 +5,7 @@
 
 <div class="hero-unit">
 	<div class="page-header">
-		<h3>SKIMA 2012 Admin Page Login</h3>
+		<h3>SKIMA 2013 Admin Page Login</h3>
 	</div>
 
 

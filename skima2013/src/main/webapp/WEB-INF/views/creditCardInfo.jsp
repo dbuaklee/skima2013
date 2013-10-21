@@ -54,7 +54,7 @@
 		</thead>
 		<tbody>
 			<tr>
-				<td style="padding-left: 40px; border-bottom: 0px;">SKIMA 2012 Registration Fee - ${registrator.registrationInfo.registrationItemStringNoFee}</td>
+				<td style="padding-left: 40px; border-bottom: 0px;">SKIMA 2013 Registration Fee - ${registrator.registrationInfo.registrationItemStringNoFee}</td>
 				<td style="text-align: right; padding-right: 30px; border-bottom: 0px;"><fmt:formatNumber pattern="#,##0.00">${registrator.registrationInfo.registrationItemFee}</fmt:formatNumber></td>
 			</tr>
 			<c:if test="${registrator.registrationInfo.workshopItem != 'notSelected'}">

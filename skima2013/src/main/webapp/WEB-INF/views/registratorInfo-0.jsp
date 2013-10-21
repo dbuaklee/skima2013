@@ -73,7 +73,7 @@ We have not received your payment yet, you can
 		</div>
 	</div>
    	<div class="form-actions">
-   		<button type="submit" class="btn" name="_eventId_exit">Exit and Go Back to SKIMA 2012 Web page</button>
+   		<button type="submit" class="btn" name="_eventId_exit">Exit and Go Back to SKIMA 2013 Web page</button>
     	<span id="creditCardBtn">
         	<button type="submit" class="btn btn-primary" name="_eventId_creditCard">Confirm &amp; Next &gt;</button>
         </span>
