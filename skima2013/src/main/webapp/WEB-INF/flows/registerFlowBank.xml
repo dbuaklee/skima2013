@@ -49,9 +49,9 @@
 	
 	<end-state id="alreadyRegister" view="redirect:registerInfo"/>
 	
-    <end-state id="registrationEnd" view="externalRedirect:http://www.epsrcham.org.uk/SKIMA2012/"/>
+    <end-state id="registrationEnd" view="externalRedirect:http://www.camt.cmu.ac.th/skima2013/"/>
 
-    <end-state id="registrationCancelled" view="externalRedirect:http://www.epsrcham.org.uk/SKIMA2012/"/>
+    <end-state id="registrationCancelled" view="externalRedirect:http://www.camt.cmu.ac.th/skima2013/"/>
 
 	
 </flow>

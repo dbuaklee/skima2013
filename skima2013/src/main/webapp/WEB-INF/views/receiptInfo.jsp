@@ -49,7 +49,7 @@
 		<thead>
 			<tr>
 				<th style="text-align: center;">Item</th>
-				<th width="150" style="text-align: center;">Amount (USD)</th>
+				<th width="150" style="text-align: center;">Amount (${registrator.registrationInfo.currencyPayment})</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -69,7 +69,7 @@
 <!-- 			</tr> -->
 			<tr>
 				<td style="text-align: right; padding-right: 40px;"><b>Total</b></td>
-				<td style="text-align: right; padding-right: 30px;"><b><fmt:formatNumber pattern="#,##0.00">${registrator.registrationInfo.totalFee}</fmt:formatNumber> (USD)</b></td>
+				<td style="text-align: right; padding-right: 30px;"><b><fmt:formatNumber pattern="#,##0.00">${registrator.registrationInfo.totalFee}</fmt:formatNumber> (${registrator.registrationInfo.currencyPayment})</b></td>
 			</tr>
 		</tbody>
 	</table>
@@ -83,7 +83,7 @@
 	
 	<form:form class="form-horizontal" action="${flowExecutionUrl}" method="POST" commandName="registrator">
 		<div class="span12">
-			<button type="submit" class="btn" name="_eventId_complete">Back to SKIMA2012 Web Page</button>		
+			<button type="submit" class="btn" name="_eventId_complete">Back to SKIMA2013 Web Page</button>		
 		</div>   	
 	</form:form>
 	

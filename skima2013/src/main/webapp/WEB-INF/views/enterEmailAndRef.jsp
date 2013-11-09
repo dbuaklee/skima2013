@@ -5,7 +5,7 @@
 
 <div class="hero-unit">
 	<div class="page-header">
-		<h3>Please Enter your e-mail Address and SKIMA2012 Registration Invoice Number</h3>
+		<h3>Please Enter your e-mail Address and SKIMA2013 Registration Invoice Number</h3>
 	</div>
 
 	<form:form class="form-horizontal" action="${flowExecutionUrl}"

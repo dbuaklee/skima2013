@@ -21,7 +21,7 @@
     <authentication-provider>
       <user-service>
         <user name="admin" password="inn0va@Skima2013" authorities="ROLE_ADMIN" />
-        <user name="skima_admin" password="skIma2012@dmin" authorities="ROLE_SKIMAADMIN"/>
+        <user name="skima_admin" password="skIma2013@dmin" authorities="ROLE_SKIMAADMIN"/>
         </user-service>
     </authentication-provider>
   </authentication-manager>

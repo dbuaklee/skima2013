@@ -49,7 +49,7 @@
 		<thead>
 			<tr>
 				<th style="text-align: center;">Item</th>
-				<th width="150" style="text-align: center;">Amount (USD)</th>
+				<th width="150" style="text-align: center;">Amount (${registrator.registrationInfo.currencyPayment})</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -64,17 +64,17 @@
 				</tr>
 			</c:if>
 			<tr>
-				<td style="padding-left: 40px; border-bottom: 0px; border-top: 0px;">${registrator.registrationInfo.numExtraBanquet} Extra Banquet (@ 80 USD each = ${registrator.registrationInfo.numExtraBanquet *80} USD)</td>
-				<td style="text-align: right; padding-right: 30px; border-bottom: 0px; border-top: 0px;"><fmt:formatNumber pattern="#,##0.00">${registrator.registrationInfo.numExtraBanquet *80}</fmt:formatNumber></td>
+				<td style="padding-left: 40px; border-bottom: 0px; border-top: 0px;">${registrator.registrationInfo.numExtraBanquet} Extra Banquet ${registrator.registrationInfo.extraBanquetFeeText}</td>
+				<td style="text-align: right; padding-right: 30px; border-bottom: 0px; border-top: 0px;"><fmt:formatNumber pattern="#,##0.00">${registrator.registrationInfo.extraBanquetFee}</fmt:formatNumber></td>
 			</tr>
 			<tr>
-				<td style="padding-left: 40px; border-bottom: 0px; border-top: 0px;">${registrator.registrationInfo.numExtraCD} Extra Conference Material CD (@ 20 USD each = ${registrator.registrationInfo.numExtraCD *20} USD)</td>
-				<td style="text-align: right; padding-right: 30px; border-bottom: 0px; border-top: 0px;"><fmt:formatNumber pattern="#,##0.00">${registrator.registrationInfo.numExtraCD *50}</fmt:formatNumber></td>
+				<td style="padding-left: 40px; border-bottom: 0px; border-top: 0px;">${registrator.registrationInfo.numExtraCD} Extra Conference Material CD ${registrator.registrationInfo.extraCDFeeText}</td>
+				<td style="text-align: right; padding-right: 30px; border-bottom: 0px; border-top: 0px;"><fmt:formatNumber pattern="#,##0.00">${registrator.registrationInfo.extraCDFee}</fmt:formatNumber></td>
 			
-			</tr>			
+			</tr>		
 			<tr>
-				<td style="text-align: right; padding-right: 40px;"><b>Total (USD)</b></td>
-				<td style="text-align: right; padding-right: 30px;"><b><fmt:formatNumber pattern="#,##0.00">${registrator.registrationInfo.totalFee}</fmt:formatNumber> (USD) </b></td>
+				<td style="text-align: right; padding-right: 40px;"><b>Total</b></td>
+				<td style="text-align: right; padding-right: 30px;"><b><fmt:formatNumber pattern="#,##0.00">${registrator.registrationInfo.totalFeeCurrencyAware}</fmt:formatNumber>  (${registrator.registrationInfo.currencyPayment})</b></td>
 			</tr>
 			<%--
 			<tr>

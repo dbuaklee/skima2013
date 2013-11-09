@@ -411,6 +411,15 @@ public class RegistrationInfo implements Serializable {
 		}
 		return fee;
 	}
+	public Double getTotalFeeCurrencyAware() {
+		if(registrationItem != null 
+				&& registrationItem.equals(RegistrationItem.participant)) {
+			return getTotalFeeBaht();
+		} else {
+			return getTotalFee();
+		}
+	}
+	
 	public Double getTotalFee() {
 		Double fee = 0.0;
 		
@@ -458,17 +467,56 @@ public class RegistrationInfo implements Serializable {
 		
 	}
 	public Double getExtraCDFee() {
-		return numExtraCD * extraCDRate;
+		if(registrationItem != null 
+				&& registrationItem.equals(RegistrationItem.participant)) {
+			return numExtraCD * extraCDRate * exchangeRate;
+		} else {
+			return numExtraCD * extraCDRate;
+		}
 	}
+	
+	public String getExtraCDFeeText() {
+		if(registrationItem != null 
+				&& registrationItem.equals(RegistrationItem.participant)) {
+			return "(@" + (extraCDRate*exchangeRate) + " THB each)";
+		} else {
+			return "(@ " + extraCDRate + " USD each)";
+		}
+	}
+	
 	public Double getExtraBanquetFee() {
-		return numExtraBanquet * extraBanquetRate;
+		if(registrationItem != null 
+				&& registrationItem.equals(RegistrationItem.participant)) {
+			return numExtraBanquet * exchangeRate * extraBanquetRate;
+		} else {
+			return numExtraBanquet * extraBanquetRate;
+		}
 	}
+	public String getExtraBanquetFeeText() {
+		if(registrationItem != null 
+				&& registrationItem.equals(RegistrationItem.participant)) {
+			return "(@" + (extraBanquetRate*exchangeRate) + " THB each)";
+		} else {
+			return "(@ " + extraBanquetRate + " USD each)";
+		}
+	}
+	
 	public Double getTotalFeeBaht() {
 		return getTotalFee() * exchangeRate;
 	}
 	public Double getExchangeRate() {
 		return RegistrationInfo.exchangeRate;
 	}
+	
+	public String getCurrencyPayment() {
+		if(registrationItem != null 
+				&& registrationItem.equals(RegistrationItem.participant)) {
+			return "THB";
+		} else {
+			return "USD";
+		}
+	}
+	
 	
 	public static List<Map<String, Object>> getBlankLineItemReceipt() {
 		Integer i = 0;

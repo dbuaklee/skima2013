@@ -35,7 +35,7 @@
     	</transition>
 		<transition on="creditCardInvoice" to="creditCardInfo"/>
 		<transition on="moneyTransferInvoice" to="moneyTransferInfo"/>
-		<transition on="exit" to="backToSKIMA2012Web"/>
+		<transition on="exit" to="backToSKIMA2013Web"/>
 	</view-state>
     
     <view-state id="moneyTransferInfo" view="moneyTransferInfo">
@@ -57,7 +57,7 @@
 	
 	<end-state id="registrationEnd" view="externalRedirect:http://www.camt.cmu.ac.th/skima2013/"/>
     
-    <end-state id="backToSKIMA2012Web" view="externalRedirect:http://www.camt.cmu.ac.th/skima2013/"/>
+    <end-state id="backToSKIMA2013Web" view="externalRedirect:http://www.camt.cmu.ac.th/skima2013/"/>
 
 	
 </flow>
